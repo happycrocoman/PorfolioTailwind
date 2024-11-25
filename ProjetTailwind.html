@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio de Karim</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="./output.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DynaPuff:wght@400..700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body class="bg-gray-900 text-white">
+  <!-- Section d'en-tête -->
+  <!-- Un en-tête avec une couleur gris foncé,(échelle de 50 à 900 pour Tailwind)
+        Une marge interne (padding de 4x.25rem = 1rem = 16 pixels),
+        Qui reste visible en haut de la fenêtre pendant le défilement avec une marge top = 0,
+        Et se superpose correctement à d'autres éléments grâce au z-index. 
+        Cela ne marche pas avec fix mais par contre cela marche avec sticky???-->
+  <header class="bg-gray-800 p-4 sticky top-0 z-10">
+    <!-- "bg-gray-800 p-4 sticky top-0 z-10"-->
+    <!--permet de separer horizontalement les enfants de la div qui sont h1 et nav -->
+    <div class="container mx-auto flex justify-between items-center">
+      <!-- La police ne s'affiche pas???-->
+      <h1 class="text-3xl font-bold font-['Bebas Neue']">M O N &nbsp; &nbsp; P O R F O L I O</h1>
+      <nav>
+        <!--permet de séparer sur la droite les éléments de la liste de 4x.25 = 1rem =16 px-->
+        <ul class="md:flex md:space-x-4">
+          <li><a href="#home" class="hover:text-teal-400">Accueil</a></li>
+          <li><a href="#projects" class="hover:text-teal-400">Projets</a></li>
+          <li><a href="#contact" class="hover:text-teal-400">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Section héros -->
+  <section id="home" class="relative h-screen bg-cover bg-center"
+    style="background-image: url('https://via.placeholder.com/1500');">
+    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+      <div class="text-center">
+        <h2 class="text-4xl md:text-6xl font-bold mb-4">Bonjour, je suis Karim Houdrouge</h2>
+        <p class="text-xl md:text-2xl">Bien que je sois le dernier de ma classe, je reste un développeur passionné. <br>
+          Ma passion fera de moi le meilleur créateur de ma classe !</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section compétences; padding vertical 16 rem avec un bg gris foncé -->
+  <section id="skills" class="py-16 bg-gray-800">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-8">Mes Compétences</h3>
+      <!-- crée une grille, mobile first : 1 colonne, puis avec sm : 2 col, puis avec lg et plus : 3 col,
+       gap 6 veut dire qu'il ajoute un espace uniforme entre les colonnes et les rangées de 6*.25rem = 1,5rem soit 24px-->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- padding de 6 avec bg gris 700 -->
+        <div class="p-6 bg-gray-700 rounded-lg text-center">
+          <h4 class="text-xl font-semibold mb-4">HTML & CSS</h4>
+          <p>Création de mises en page.</p>
+        </div>
+        <div class="p-6 bg-gray-700 rounded-lg text-center">
+          <h4 class="text-xl font-semibold mb-4">JavaScript</h4>
+          <p>Développement d'applications en cours d'apprentissage.</p>
+        </div>
+        <div class="p-6 bg-gray-700 rounded-lg text-center">
+          <h4 class="text-xl font-semibold mb-4">Tailwind CSS</h4>
+          <p>Utilisation de styles utilitaires pour un design rapide, moderne et réactif.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section projets -->
+  <section id="projects" class="py-16 bg-gray-900">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-8">Mes Projets</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- carte projet -->
+        <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+          <img src="https://via.placeholder.com/300" alt="Projet 1" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h4 class="text-xl font-semibold mb-2">Projet Restaurant</h4>
+            <p class="text-gray-400">Réaliation d'un site web pour un restaurant à l'aide de Bootsrtap.</p>
+          </div>
+        </div>
+        <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+          <img src="https://via.placeholder.com/300" alt="Projet 1" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h4 class="text-xl font-semibold mb-2">Projet Porfolio</h4>
+            <p class="text-gray-400">Réaliation d'un site web pour un porfolio à l'aide de Tailwind.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulaire de contact -->
+  <section id="contact" class="py-16 bg-gray-800">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-8">Me Contacter</h3>
+      <form class="max-w-lg mx-auto">
+        <div class="mb-4">
+          <!-- Quelle est la taille du label? -->
+          <label for="name" class="block mb-2">Nom</label>
+          <input type="text" id="name" class="w-full p-3 bg-gray-700 rounded-lg">
+        </div>
+        <div class="mb-4">
+          <label for="email" class="block mb-2">Adresse e-mail</label>
+          <input type="email" id="email" class="w-full p-3 bg-gray-700 rounded-lg">
+        </div>
+        <div class="mb-4">
+          <label for="message" class="block mb-2">Message</label>
+        <!-- Quelle est la taille de textarea? -->
+          <textarea id="message" class="w-full p-3 bg-gray-700 rounded-lg"></textarea>
+        </div>
+        <!-- Quelle est la taille du bouton? -->
+        <button type="submit" class="w-full bg-teal-500 hover:bg-teal-400 p-3 rounded-lg font-bold">Envoyer</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 py-6">
+    <div class="container mx-auto flex justify-between items-center">
+      <p class="text-sm">© 2024 Ceci est le porfolio de Karim Houdrouge. Tous droits réservés. Tout auteur de fraude,
+        par copie en partie ou en totalité, est suceptible de poursuites judiciaires avec des peines d'amendes et/ou
+        d'emprisonnement. </p>
+      <div class="flex space-x-4">
+        <a href="#" class="hover:text-teal-400">Facebook</a>
+        <a href="#" class="hover:text-teal-400">Twitter</a>
+        <a href="#" class="hover:text-teal-400">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
